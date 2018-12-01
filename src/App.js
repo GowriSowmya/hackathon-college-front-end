@@ -14,23 +14,42 @@ class App extends Component {
     this.state = {
       currentForm : "none"
     }
+    this.myRef = React.createRef();
+
   }
 
+
+  selectThisFunction = (event)=> {
+  	console.log(event.target.name)
+  	this.setState({
+      currentForm : event.target.name
+    })
+    window.scrollTo(0, this.myRef.current.offsetTop)	
+  }
+
+
   render() {
+  	var formSelected;
+  	if(this.state.currentForm == "student"){
+  		formSelected = (<StudentApplyForm></StudentApplyForm>)
+  	} else{
+  		formSelected = (<CompanyRecruitmentForm></CompanyRecruitmentForm>)
+  	}
     return (
       	<div className="App">
 	    <Header></Header>
+	    	<br /><br />
 	    <Container>
 	    	<Row>
 	    		<Col>
 					<div>
 				      <Card>
-				        <CardImg top width="100%" src="https://www.tutorean.co.uk/bettertutor/wp-content/uploads/2017/11/students.jpg" alt="Card image cap" />
+				        <CardImg top height="150px" width="150px" src="https://media.giphy.com/media/l3vRlCJ9Pb2t0fJe0/giphy.gif" alt="Card image cap" />
 				        <CardBody>
-				          <CardTitle>Card title</CardTitle>
-				          <CardSubtitle>Card subtitle</CardSubtitle>
-				          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-				          <Button onClick={this.selectThisFunction} name="student">Button</Button>
+				          <CardTitle>Students Signup</CardTitle>
+				          <CardSubtitle>Apply for internships in no time</CardSubtitle>
+				          <CardText></CardText>
+				          <Button onClick={this.selectThisFunction} name="student">Click here</Button>
 				        </CardBody>
 				      </Card>
 			    	</div>
@@ -38,22 +57,25 @@ class App extends Component {
 	    		<Col>
 		    		<div>
 				      <Card>
-				        <CardImg top width="100%" src="https://alum.mit.edu/sites/default/files/slice/uploads/2017/07/Logo-square-2.jpg" alt="Card image cap" />
+				        <CardImg top height="150px" width="150px" src="https://media.giphy.com/media/l3vRlCJ9Pb2t0fJe0/giphy.gif" alt="Card image cap" />
 				        <CardBody>
-				          <CardTitle>Card title</CardTitle>
-				          <CardSubtitle>Card subtitle</CardSubtitle>
-				          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-				          <Button onClick={this.selectThisFunction} name="company">Button</Button>
+				          <CardTitle>Company Registration</CardTitle>
+				          <CardSubtitle>Find most suitable candidate for your company</CardSubtitle>
+				          <CardText></CardText>
+				          <Button onClick={this.selectThisFunction} name="company">Click here</Button>
 				        </CardBody>
 				      </Card>
 			    	</div>
 	    		</Col>							  
 	    	</Row>      	
 	    </Container>
-
+			<br /><br />
         <header className="App-header">
-        	<StudentApplyForm></StudentApplyForm>
-        	<CompanyRecruitmentForm></CompanyRecruitmentForm>
+        	<div  ref={this.myRef}>
+        	<Container>
+				{formSelected}        	
+        	</Container>        	
+        	</div>
         </header>        
       </div>
     );
