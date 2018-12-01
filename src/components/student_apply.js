@@ -69,10 +69,10 @@ class StudentApplyForm extends Component {
           </Row>
           <Row form>
             <Col>
-              <Input type="text" name="desc" id="desc" />
+              <Input type="text" name="desc" id="desc" placeholder="Enter your responsibilities"/>
             </Col>
             <Col>
-              <Input type="text" name="tech" id="tech" />
+              <Input type="text" name="tech" id="tech" placeholder="Enter the technologies used" />
             </Col>
           </Row>
         </FormGroup>
@@ -86,10 +86,10 @@ class StudentApplyForm extends Component {
               <Input type="number" name="p_period" id="p_period" placeholder="Enter the number of months worked"/>
             </Col>
             <Col>
-              <Input type="text" name="p_desc" id="p_desc" />
+              <Input type="text" name="p_desc" id="p_desc" placeholder="Enter your responsibilities"/>
             </Col>
             <Col>
-              <Input type="text" name="p_tech" id="p_tech" />
+              <Input type="text" name="p_tech" id="p_tech" placeholder="Enter the technologies used"/>
             </Col>
           </Row>
         </FormGroup>
