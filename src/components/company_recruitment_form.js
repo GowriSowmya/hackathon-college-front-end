@@ -12,8 +12,13 @@ class CompanyRecruitmentForm extends Component {
         <Row form>
           <Col md={6}>
             <FormGroup>
+<<<<<<< HEAD
               <Label for="website">Website</Label>
               <Input type="text" name="website" id="website" placeholder="Enter your company's website" />
+=======
+              <Label for="exampleEmail">Compnay Email</Label>
+              <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+>>>>>>> fd66ee19a0a3534e65eec547b7c273423df8a253
             </FormGroup>
           </Col>
           <Col md={6}>
